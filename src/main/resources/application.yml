@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: ${DB_DRIVER}
+    testWhileIdle: true
+    validationQuery: SELECT 1
+  jpa:
+    hibernate:
+      ddl-auto: ${DB_DDL}
+    properties:
+      hibernate:
+        dialect: ${DB_DIALECT}
+  #Disable Whitelabel error page
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+server:
+  port: ${APP_PORT}
+  oauth:
+    security:
+      alg: ${ALG}
+      salt: ${SALT}
+      jwt:
+        #Keys must be in DER format
+        keys:
+          public:
+            path: ${JWT_PUBLIC_KEY_PATH}
+          private:
+            path: ${JWT_PRIVATE_KEY_PATH}
+logging:
+  level:
+    root: info
+  file: ${APP_LOGFILE_NAME}
