@@ -1,4 +1,4 @@
-#Spring Boot Resource server
+# Spring Boot Resource server
 
 This project is a simple Resource server using Spring boot. This is based on an older version of Spring Boot and will be updated in future releases.
 
